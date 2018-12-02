@@ -1,0 +1,29 @@
+{"nom": "la caravane",
+"type" : "sondage",
+"questions":
+ [{"numero" :1,
+   "type" : "ONS",
+  "libelle" : "aimez vous la pizza ?"},
+  {"numero" :2,
+   "type" : "LargeText",
+  "libelle" : "Pourquoi ?"},
+  {"numero" :3,
+   "type" : "text",
+  "libelle" : "adresse mail  ?",
+   "size" : 40 },
+  {"numero" :4,
+   "type" : "text",
+  "placeholder" : "adresse mail",
+   "size" : 40 },
+  {"numero" :5,
+   "type" : "multi",
+   "libelle" : "Garniture ?",
+   "choix" : ["P","poivron", "a", "anchois", "C", "capres" ]
+   },
+   {"numero" :6,
+   "type" : "simple",
+   "libelle" : "Boisson ?",
+   "choix" : ["P","pepsi", "F", "Fanta", "C", "Café" ]
+   }
+ ]
+}

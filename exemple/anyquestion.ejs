@@ -1,0 +1,109 @@
+{'nom': 'la caravane', 'type': 'sondage', 'questions': [{'numero': 1, 'type': 'ONS', 'libelle': 'aimez vous la pizza ?'}, {'numero': 2, 'type': 'LargeText', 'libelle': 'Pourquoi ?'}, {'numero': 3, 'type': 'text', 'libelle': 'adresse mail  ?', 'size': 40}, {'numero': 4, 'type': 'text', 'placeholder': 'adresse mail', 'size': 40}, {'numero': 5, 'type': 'multi', 'libelle': 'Garniture ?', 'choix': ['P', 'poivron', 'a', 'anchois', 'C', 'capres']}, {'numero': 6, 'type': 'simple', 'libelle': 'Boisson ?', 'choix': ['P', 'pepsi', 'F', 'Fanta', 'C', 'Café']}]}
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <title><%= title %></title>
+    <script src="/js/vue.js"></script>
+    <script src="/js/axios.min.js"></script>
+    <!-- Bootstrap Core CSS -->
+    <link href="/css/bootstrap.min.css" rel="stylesheet">
+</head>
+
+<body>
+<div id="app">
+
+    <h2> {{message}} </h2>
+<div class="container">
+<div class="alert alert-secondary" role="alert">
+
+  <label for="code postal">Code postal de l'évènement</label><br>
+  <input type="text"  placeholder="code postal" v-model ="code"/><br>
+  <br>
+  <label for="sondeur">zone libre</label><br>
+  <input type="text"  placeholder="nom, lieux, tag" size="40" v-model ="sondeur"/><br>
+  <hr>
+{{nbitem-1}} Formulaire(s)  <button  type="button" class="btn btn-danger"   v-on:click="plustous">Envoyer les formulaires sur le serveur</button>
+</div>
+<br><hr>
+
+<!-- question 1  -->
+                <div class="card">
+                <div class="card-header">
+                <label for="question">Question 1:aimez vous la pizza ?</label><br>
+                </div>
+                <label for="question1-1">OUI</label>
+                <input type="radio" value='O' v-model ="question1"><br>
+                <label for="question1-2">NON</label>
+                <input type="radio" value='N' v-model="question1"><br>
+                <label for="question1-3">Je ne sais pas</label>
+                <input type= "radio" value='I' v-model="question1"><br>
+                </div><br><hr>
+<!-- question 2  -->
+                <div class="card">
+                <div class="card-header">
+                <label for="question">Question 2:Pourquoi ?</label><br>
+                </div>
+                <textarea v-model ="question2"  cols="40" rows="5"></textarea>
+                </div><br><hr>
+<!-- question 3  -->
+                <div class="card">
+                <div class="card-header">
+                
+
+                <label for="question">Question 3:adresse mail  ?</label><br>
+                </div>
+                <input type="text"   v-model ="question3" size="10">
+                </div><br><hr>
+<!-- question 4  -->
+                <div class="card">
+                <div class="card-header">
+                
+
+                <input type="text"  placeholder="adresse mail" v-model ="question4" size="10">
+                </div></div><br><hr>
+                  
+<!-- question 5  -->
+                <div class="card">
+                <div class="card-header">
+                <label for="question">Question 5:Garniture ?</label><br>
+                </div>
+
+                <label for="question5-1">poivron</label>
+                <input type= checkbox value='P' v-model = "question5X1"><br>
+
+                <label for="question5-2">anchois</label>
+                <input type= checkbox value='a' v-model = "question5X2"><br>
+
+                <label for="question5-3">capres</label>
+                <input type= checkbox value='C' v-model = "question5X3"><br>
+                </div><br><hr>
+<!-- question 6  -->
+                <div class="card">
+                <div class="card-header">
+                <label for="question">Question 6:Boisson ?</label><br>
+                </div>
+
+                <label for="question6-1">pepsi</label>
+                <input type= radio value='P' v-model = "question6"><br>
+
+                <label for="question6-2">Fanta</label>
+                <input type= radio value='F' v-model = "question6"><br>
+
+                <label for="question6-3">Café</label>
+                <input type= radio value='C' v-model = "question6"><br>
+                </div><br><hr>
+
+<br><hr>
+<button  type="button" class="btn btn-success" v-on:click="plusun">Sauvegarder le formulaire</button>
+</div>
+</div>
+</body>
+  <script src="/javascripts/eg.js"></script>
+</html>
